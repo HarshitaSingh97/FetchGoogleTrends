@@ -1,6 +1,5 @@
 #!flask/bin/python
 from flask import Flask, jsonify, abort, make_response, request, Response, redirect
-from werkzeug.utils import secure_filename
 import sys
 import time
 from PygTrends import fetchtrends

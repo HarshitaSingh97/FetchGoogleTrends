@@ -1,1 +1,0 @@
-export PATH=LOCAL_PATH:$PATH
