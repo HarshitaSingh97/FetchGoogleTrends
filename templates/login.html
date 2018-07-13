@@ -1,0 +1,43 @@
+
+<html>
+  <head>
+    <title>Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="static/bootstrap.min.css" rel="stylesheet" media="screen">
+    <style>
+    /* Message flashing */
+    .flash {
+      background-color: #FBB0B0;
+      padding: 10px;
+      width: 400px;
+    }
+
+    </style>
+  </head>
+  <body>
+    <div class="container" style="margin: 0 auto;margin-top:200px ;width:70%;text-align: center;">
+      <h1 align="center" style="font-size:2em">Enter login credentials</h1>
+      <br>
+      <form style="font-size:1.3em;" action="" method="post">
+        <label for="Username">Username: </label>
+        <input type="text" style="height:2em;" placeholder="Username" name="username" value="{{
+          request.form.username }}" required><br><br>
+          <label for="Password">Password: </label>
+         <input type="password" style="height:2em;" placeholder="Password" name="password" value="{{
+          request.form.password }}" required><br><br>
+        <input class="btn btn-default" type="submit" value="Login">
+      </form>
+      <br>
+      {% for message in get_flashed_messages() %}
+      <div class="flash" style="margin:auto;text-align:center;">{{ message }}</div>
+      {% endfor %}
+      <br>
+      <br>
+      <a href="/signup">Sign Up</a>
+      <!--{% if error %}
+       	<p class="error"><strong>Error:</strong> {{ error }}
+      {% endif %}-->
+
+    </div>
+  </body>
+</html>

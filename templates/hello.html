@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+  <head>
+<title>Fetch Google Trends Data</title>
+     <meta name="viewport" content = "width=device-width, initial-scale=1.0">
+<style>
+/* Message flashing */
+.flash {
+background-color: #FBB0B0;
+padding: 10px;
+width: 400px;
+}
+</style>
+  </head>
+  <body>
+
+
+<a style="float:right;" href="/logout"> Logout </a><br>
+<div class="container" style="margin: 0 auto;margin-top:200px ;width:70%;text-align: center;">
+
+
+<h2 align="center" style="font-size:3.5em">Fetch Google Trends Data</h2>
+<form style="font-size:1.3em;" action="" method="post" role="form">
+  {{ form.csrf }}
+  <div class="form-group">
+    <label for="Keywords">Keywords: </label>
+    <input type="text" style="height:2em;" class="form-control" id="Keywords" name="Keywords" placeholder="Enter comma separated keywords">
+    <br><br><br>
+  </div>
+  <button type="submit" class="btn btn-success">Fetch</button>
+</form>
+
+<br>
+{% for message in get_flashed_messages() %}
+<div class="flash" style="text-align:center;">{{ message }}</div>
+{% endfor %}
+<!--{% with messages = get_flashed_messages(with_categories=true) %}
+      <!--    {% if messages %}-->
+
+     <!-- {% for message in messages %}-->
+        <!--  <div class="alert alert-warning"-->
+         <!-- {{ message[1] }}-->
+          <!--</div-->
+     <!-- {% endfor %}
+          {% endif %}
+      {% endwith %}-->
+
+</div>
+<br>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,42 @@
+
+<html>
+  <head>
+    <title>Sign Up</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="static/bootstrap.min.css" rel="stylesheet" media="screen">
+    <style>
+    /* Message flashing */
+    .flash {
+      background-color: #FBB0B0;
+      padding: 10px;
+      width: 400px;
+    }
+    label{
+     float:left;
+    }
+    </style>
+  </head>
+  <body>
+    <div class="container" style="margin: 0 auto;margin-top:200px ;width:25%;text-align: center;">
+      <h1 align="center" style="font-size:2em">Sign Up</h1>
+      <br>
+      <form style="font-size:1.3em;" action="" method="post">
+        <label for="Username">Username: </label>
+        <input type="text" style="float:right;height:2em;" placeholder="Username" name="username" value="{{
+          request.form.username }}" required><br><br>
+          <label for="Password">Password: </label>
+         <input type="password" style="float:right;height:2em;" placeholder="Password" name="password" value="{{
+          request.form.password }}" required><br><br>
+          <label for="Confirmpassword">Confirm password: </label>
+          <input type="password" style="float:right;height:2em;" placeholder="Re-enter Password" name="repassword" value="{{
+           request.form.repassword }}" required><br><br>
+        <input class="btn btn-default" type="submit" value="Sign Up">
+      </form>
+      <br>
+      {% for message in get_flashed_messages() %}
+      <div class="flash" style="margin:auto;text-align:center;">{{ message }}</div>
+      {% endfor %}
+      <br>
+    </div>
+  </body>
+</html>
